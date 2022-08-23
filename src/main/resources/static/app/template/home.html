@@ -1,0 +1,77 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdeys" style="margin-top: 50px;">
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-4">
+        <div class="panel rounded shadow">
+            <div class="panel-body">
+                <div class="inner-all">
+                    <ul class="list-unstyled" style="width: 315px;">
+                        <li class="text-center">
+                            <img data-no-retina="" class="img-circle img-responsive img-bordered-primary" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Profile.png">
+                        </li>
+                        <li class="text-center">
+                            <h4>{{user.name}} {{user.surname}}</h4>
+                            <p class="text-muted text-capitalize">Jr. Application Security Specialist</p>
+                        </li>
+                        <li class="text-center">
+                            <div class="btn-group-vertical btn-block">
+                                <a href="/user/logout" target="_self" class="btn btn-default"><i class="fa-solid fa-person-through-window fa-2xl"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.panel -->
+
+        <div class="panel panel-theme rounded shadow">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h3 class="panel-title">Contact</h3>
+                </div>                
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body no-padding rounded">
+                <ul class="list-group no-margin">
+                    <li class="list-group-item"><i class="fa fa-envelope mr-5"></i> {{user.email}}</li>
+                    <li class="list-group-item"><i class="fa fa-globe mr-5"></i> www.{{user.email}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-8">
+
+    <div class="profile-cover">
+        <div class="cover rounded shadow no-overflow">
+            <div class="inner-cover">
+                <img  src="https://www.ceramictw.com/wp-content/uploads/2022/03/La-Marca-Carrara-Goia-946x200.png" class="img-responsive" alt="cover" style="max-height:200px;">
+            </div>
+            <ul class="list-unstyled no-padding hidden-sm hidden-xs cover-menu" >
+                <li class="active"><a href="#"><i class="fa-solid fa-bars-staggered"></i><span>Timeline</span></a></li>
+                <li><a href="#" ng-click="showFriendsModal()"><i class="fa fa-fw fa-users"></i><span> Friends </span></a></li>
+                <li><a href="#" ng-click="showAddModal()"><i class="fa-solid fa-plus"></i><span> Add Friend </span></a></li>
+                <li><a href="#" ng-click="showRequestModal()"><i class="fa-solid fa-people-group"></i><span> Friend Requests </span><small>({{requests.length}})</small></a></li>      
+            </ul>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="panel rounded shadow">
+        <form action="...">
+            <h4 style="font-weight: bold">Share A Post:</h4>
+            <textarea id="post"  class="form-control input-lg no-border" rows="2" placeholder="What are you doing?..." ng-model="request.content"></textarea>
+        </form>
+        <div class="panel-footer">
+            <button id="btn" class="btn btn-success pull-right mt-2" ng-click="share()">Share Post</button>
+        </div>
+        <div ng-repeat="post in posts | orderBy: '-created'" style="margin-top: 55px; margin-bottom: 20px;">
+            <p class="text-muted" style="margin-left: 5px; margin-bottom: 5px;">Post by: {{post.user.name}} {{post.user.surname}} ({{post.created | timeago}})</p>
+            <div class="card">
+                <div class="card-body">
+                  <p class="card-text">{{post.content}}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
